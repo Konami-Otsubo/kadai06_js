@@ -1,0 +1,89 @@
+/* 初期メッセージのスタイル */
+#introMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px; /* 大きなフォントサイズ */
+    white-space: nowrap;
+    opacity: 0;
+    background-color: white;
+    animation: floatIn 3s forwards;
+}
+
+@keyframes floatIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* 背景とメイン要素 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: 100vh;
+    overflow: hidden; /* 背景がスクロールしないようにする */
+}
+
+main {
+    text-align: center;
+    position: relative;
+    margin-top: 100px;
+    overflow: hidden; /* 妖精が飛び出さないように */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    height: 80vh;
+}
+
+li {
+    display: inline-block;
+}
+
+/* 妖精ボタン */
+.fairyBtn {
+    width: 120px; /* 妖精のサイズを少し大きく */
+    cursor: pointer;
+}
+
+/* 中央に表示される妖精画像 */
+#fairyDisplay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#fairyImage {
+    display: none;
+}
+
+/* プリズムエフェクト */
+#prismEffect {
+    position: absolute;
+    border-radius: 50%;
+    display: none;
+}
+
+/* 妖精がふわふわ浮かぶアニメーション */
+@keyframes floatFairy {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.fairyBtn {
+    animation: floatFairy 4s ease-in-out infinite;
+}
+
+/* 金色の光の粒のエフェクト */
+@keyframes sparkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
